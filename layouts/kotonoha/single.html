@@ -1,11 +1,12 @@
 {{ define "main" }}
 {{ $cat := .Params.category }}
-{{ $slug := "" }}{{ range site.Params.kotonohaCategories }}{{ if eq .name $cat }}{{ $slug = .slug }}{{ end }}{{ end }}
+{{ $slug := partial "catslug.html" . }}
 {{ $ps := (where (where site.RegularPages "Section" "kotonoha") "Params.category" $cat).ByWeight }}
-<article class="kotonoha-single">
+{{ $img := .Resources.GetMatch "cover.*" }}
+<article class="kotonoha-single c-{{ $slug }}{{ if $img }} has-image{{ else }} no-image{{ end }}">
   {{ with $cat }}<p class="cat-label"><a href="{{ "/kotonoha/" | relURL }}#{{ $slug }}">{{ . }}</a></p>{{ end }}
-  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Resize "1200x webp" }}<img class="cover" src="{{ $s.RelPermalink }}" alt="" width="{{ $s.Width }}" height="{{ $s.Height }}">{{ end }}
-  <div class="kotonoha-text">{{ .Content }}</div>
+  {{ with $img }}{{ $s := .Resize "1400x webp" }}<img class="cover" src="{{ $s.RelPermalink }}" alt="" width="{{ $s.Width }}" height="{{ $s.Height }}">{{ end }}
+  <div class="stage"><div class="kotonoha-text">{{ .Content }}</div></div>
   <p class="meta">逢坂 透</p>
   <p class="share"><a href="https://x.com/intent/post?text={{ .Plain | truncate 100 | urlquery }}&url={{ .Permalink | urlquery }}" target="_blank" rel="noopener">Xでわかちあう</a></p>
   <nav class="prevnext">
@@ -14,4 +15,11 @@
     {{ with $ps.Prev . }}<a href="{{ .RelPermalink }}">つぎの言の葉 →</a>{{ else }}<span></span>{{ end }}
   </nav>
 </article>
+{{ $others := where $ps "Permalink" "ne" .Permalink }}
+{{ with $others }}
+<section class="related">
+  <h2>「{{ $cat }}」の言の葉から</h2>
+  <div class="cards">{{ range first 3 (shuffle .) }}{{ partial "card.html" . }}{{ end }}</div>
+</section>
+{{ end }}
 {{ end }}

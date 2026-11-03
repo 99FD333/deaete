@@ -92,3 +92,28 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .cat-title{font-weight:500; font-size:1.1rem; letter-spacing:.25em; margin:0 0 22px; padding-bottom:10px; border-bottom:1px solid var(--line); text-align:left}
 .cat-label{font-size:.85rem; letter-spacing:.2em; margin:0 0 28px}
 .cat-label a{color:var(--ink-soft)}
+
+/* カテゴリごとの淡い色 */
+.c-itoshii-hito{--tint:rgba(214,160,140,.20)}
+.c-koishiteru{--tint:rgba(196,150,190,.20)}
+.c-guuzen{--tint:rgba(110,140,175,.20)}
+.c-papa{--tint:rgba(143,175,130,.24)}
+.card:not(.has-image){background:radial-gradient(ellipse 90% 70% at 85% 100%, var(--tint,transparent), transparent 70%), linear-gradient(160deg,#fff 0%,var(--paper-2) 100%)}
+.card.has-image{grid-row:span 1}
+.card.has-image img{width:100%}
+
+/* 一篇のページ */
+.kotonoha-single.has-image{max-width:900px}
+.kotonoha-single.has-image .cover{width:100%; max-height:none; margin-bottom:0; border-radius:4px 4px 0 0}
+.kotonoha-single.has-image .stage{background:#fff; border:1px solid var(--line); border-top:0; border-radius:0 0 4px 4px; padding:44px 24px 48px; margin-bottom:28px}
+.kotonoha-single.no-image .stage{
+  position:relative; margin:8px auto 36px; padding:clamp(56px,10vw,110px) clamp(24px,6vw,64px);
+  background:
+    radial-gradient(ellipse 55% 45% at 12% 15%, var(--tint,transparent), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 92% 88%, var(--tint,transparent), transparent 70%),
+    linear-gradient(170deg,#fffdf8 0%,var(--paper-2) 100%);
+  border:1px solid var(--line); border-radius:4px; box-shadow:0 18px 40px rgba(60,50,30,.06)
+}
+.kotonoha-single .stage .kotonoha-text p{margin:0}
+.related{max-width:1080px; margin:0 auto; padding:40px 0 64px; border-top:1px solid var(--line)}
+.related h2{font-weight:500; font-size:1.05rem; letter-spacing:.2em; text-align:center; margin:8px 0 28px}

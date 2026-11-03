@@ -1,4 +1,5 @@
-<a class="card{{ if .Resources.GetMatch "cover.*" }} has-image{{ end }}" href="{{ .RelPermalink }}">
-  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Fill "600x600 Center webp" }}<img src="{{ $s.RelPermalink }}" alt="" loading="lazy" width="600" height="600">{{ end }}
+{{ $img := .Resources.GetMatch "cover.*" }}
+<a class="card c-{{ partial "catslug.html" . }}{{ if $img }} has-image{{ end }}" href="{{ .RelPermalink }}">
+  {{ with $img }}{{ $s := .Resize "640x webp" }}<img src="{{ $s.RelPermalink }}" alt="" loading="lazy" width="{{ $s.Width }}" height="{{ $s.Height }}">{{ end }}
   <p class="card-text">{{ .Content | plainify | htmlUnescape }}</p>
 </a>

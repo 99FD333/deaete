@@ -1,0 +1,1 @@
+{{ $slug := "" }}{{ $cat := .Params.category }}{{ range site.Params.kotonohaCategories }}{{ if eq .name $cat }}{{ $slug = .slug }}{{ end }}{{ end }}{{ return $slug }}
