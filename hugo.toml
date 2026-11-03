@@ -10,7 +10,7 @@ buildFuture = true
   author = "逢坂 透"
   description = "この星に降りて、出逢えてよかった人、光景、愛しい瞬間のことを、言の葉にして、のこしておきたい。"
   # X（旧Twitter）のユーザー名。@は不要。決まったら入れてください
-  x = ""
+  x = "deaeteyokatta3"
   # Googleフォームの「埋め込みURL」（https://docs.google.com/forms/d/e/.../viewform?embedded=true）
   googleForm = ""
 
