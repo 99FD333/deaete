@@ -85,3 +85,10 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
   .story-item{grid-template-columns:96px 1fr; gap:16px}
   .kotonoha-text{font-size:1.1rem}
 }
+
+.cat-nav{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 14px; margin:0 0 20px}
+.cat-nav a{padding:6px 18px; border:1px solid var(--line); border-radius:999px; font-size:.9rem; background:rgba(255,255,255,.6)}
+.cat{padding-top:36px; scroll-margin-top:16px}
+.cat-title{font-weight:500; font-size:1.1rem; letter-spacing:.25em; margin:0 0 22px; padding-bottom:10px; border-bottom:1px solid var(--line); text-align:left}
+.cat-label{font-size:.85rem; letter-spacing:.2em; margin:0 0 28px}
+.cat-label a{color:var(--ink-soft)}

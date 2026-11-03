@@ -6,9 +6,9 @@
 </section>
 
 <section class="block">
-  <h2>瞬間の言の葉</h2>
+  <h2>愛しい時間の言の葉</h2>
   <div class="cards">
-    {{ range first 6 (where site.RegularPages "Section" "kotonoha") }}{{ partial "card.html" . }}{{ end }}
+    {{ range first 6 (shuffle (where site.RegularPages "Section" "kotonoha")) }}{{ partial "card.html" . }}{{ end }}
   </div>
   <a class="more" href="{{ "/kotonoha/" | relURL }}">すべての言の葉へ</a>
 </section>

@@ -14,9 +14,23 @@ buildFuture = true
   # Googleフォームの「埋め込みURL」（https://docs.google.com/forms/d/e/.../viewform?embedded=true）
   googleForm = ""
 
+  # 言の葉のカテゴリ（並び順＝表示順）。slugはページ内の目印に使う英字
+  [[params.kotonohaCategories]]
+    name = "愛しい人"
+    slug = "itoshii-hito"
+  [[params.kotonohaCategories]]
+    name = "恋してる時"
+    slug = "koishiteru"
+  [[params.kotonohaCategories]]
+    name = "偶然の出逢い"
+    slug = "guuzen"
+  [[params.kotonohaCategories]]
+    name = "パパになって"
+    slug = "papa"
+
 [menus]
   [[menus.main]]
-    name = "瞬間の言の葉"
+    name = "愛しい時間の言の葉"
     pageRef = "/kotonoha"
     weight = 10
   [[menus.main]]

@@ -1,9 +1,19 @@
 {{ define "main" }}
 <section class="block">
-  <h1 class="page-title">瞬間の言の葉</h1>
+  <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
-  {{ $p := .Paginate .Pages }}
-  <div class="cards">{{ range $p.Pages }}{{ partial "card.html" . }}{{ end }}</div>
-  {{ partial "pager.html" $p }}
+  <nav class="cat-nav">
+    {{ range site.Params.kotonohaCategories }}<a href="#{{ .slug }}">{{ .name }}</a>{{ end }}
+  </nav>
+  {{ $all := .Pages }}
+  {{ range site.Params.kotonohaCategories }}
+    {{ $ps := (where $all "Params.category" .name).ByWeight }}
+    {{ if $ps }}
+    <section class="cat" id="{{ .slug }}">
+      <h2 class="cat-title">{{ .name }}</h2>
+      <div class="cards">{{ range $ps }}{{ partial "card.html" . }}{{ end }}</div>
+    </section>
+    {{ end }}
+  {{ end }}
 </section>
 {{ end }}

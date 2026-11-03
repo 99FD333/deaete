@@ -1,5 +1,7 @@
 ---
 date: 2026-11-03T21:00:00+09:00
-draft: true
+draft: false
+category: 恋してる時
+weight: 209
 ---
 ひょっとしたら会えるかな、の行ったら来たりは胸が弾んで

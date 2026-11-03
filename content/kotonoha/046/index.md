@@ -1,5 +1,7 @@
 ---
 date: 2026-11-03T21:00:00+09:00
-draft: true
+draft: false
+category: 恋してる時
+weight: 217
 ---
 背伸びして、あなたの耳に言葉を放り込むのがとても好き
