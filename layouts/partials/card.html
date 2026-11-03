@@ -1,0 +1,4 @@
+<a class="card{{ if .Resources.GetMatch "cover.*" }} has-image{{ end }}" href="{{ .RelPermalink }}">
+  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Fill "600x600 Center webp" }}<img src="{{ $s.RelPermalink }}" alt="" loading="lazy" width="600" height="600">{{ end }}
+  <p class="card-text">{{ .Content | plainify | htmlUnescape }}</p>
+</a>

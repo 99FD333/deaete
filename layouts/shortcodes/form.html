@@ -1,0 +1,5 @@
+{{ with site.Params.googleForm }}
+<div class="form-wrap"><iframe src="{{ . }}" loading="lazy" title="ことづてフォーム">読み込んでいます…</iframe></div>
+{{ else }}
+<p class="placeholder">（ここにフォームが入ります。準備中です）</p>
+{{ end }}

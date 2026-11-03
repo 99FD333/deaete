@@ -1,0 +1,39 @@
+baseURL = "https://deaete.jp/"
+languageCode = "ja"
+title = "出逢えてよかった"
+defaultContentLanguage = "ja"
+hasCJKLanguage = true
+enableRobotsTXT = true
+buildFuture = true
+
+[params]
+  author = "逢坂 透"
+  description = "この星に降りて、出逢えてよかった人、光景、愛しい瞬間のことを、言の葉にして、のこしておきたい。"
+  # X（旧Twitter）のユーザー名。@は不要。決まったら入れてください
+  x = ""
+  # Googleフォームの「埋め込みURL」（https://docs.google.com/forms/d/e/.../viewform?embedded=true）
+  googleForm = ""
+
+[menus]
+  [[menus.main]]
+    name = "瞬間の言の葉"
+    pageRef = "/kotonoha"
+    weight = 10
+  [[menus.main]]
+    name = "出逢いの物語"
+    pageRef = "/monogatari"
+    weight = 20
+  [[menus.main]]
+    name = "ことづて"
+    pageRef = "/kotozute"
+    weight = 30
+
+[markup.goldmark.renderer]
+  hardWraps = true
+  unsafe = true
+
+[pagination]
+  pagerSize = 24
+
+[taxonomies]
+  tag = "tags"

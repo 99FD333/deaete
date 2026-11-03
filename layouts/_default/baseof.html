@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ja">
+<head>{{ partial "head.html" . }}</head>
+<body class="{{ .Section | default "home" }}">
+  {{ partial "header.html" . }}
+  <main>{{ block "main" . }}{{ end }}</main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

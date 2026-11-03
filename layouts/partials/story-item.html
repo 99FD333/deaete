@@ -1,0 +1,8 @@
+<a class="story-item" href="{{ .RelPermalink }}">
+  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Fill "480x640 Center webp" }}<img src="{{ $s.RelPermalink }}" alt="" loading="lazy" width="480" height="640">{{ end }}
+  <div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Description | default (.Plain | truncate 80) }}</p>
+    <time>{{ .Date.Format "2006.1.2" }}</time>
+  </div>
+</a>

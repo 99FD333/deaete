@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="block">
+  <h1 class="page-title">瞬間の言の葉</h1>
+  {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  {{ $p := .Paginate .Pages }}
+  <div class="cards">{{ range $p.Pages }}{{ partial "card.html" . }}{{ end }}</div>
+  {{ partial "pager.html" $p }}
+</section>
+{{ end }}

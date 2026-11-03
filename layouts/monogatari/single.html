@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="story">
+  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Resize "900x webp" }}<img class="story-cover" src="{{ $s.RelPermalink }}" alt="" width="{{ $s.Width }}" height="{{ $s.Height }}">{{ end }}
+  <h1>{{ .Title }}</h1>
+  <p class="meta"><time>{{ .Date.Format "2006.1.2" }}</time>　逢坂 透</p>
+  <div class="story-body">{{ .Content }}</div>
+  <p class="share"><a href="https://x.com/intent/post?text={{ .Title | urlquery }}&url={{ .Permalink | urlquery }}" target="_blank" rel="noopener">Xでわかちあう</a></p>
+  <nav class="prevnext">
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}<span></span>{{ end }}
+  </nav>
+</article>
+{{ end }}

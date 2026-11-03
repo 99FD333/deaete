@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="kotonoha-single">
+  {{ with .Resources.GetMatch "cover.*" }}{{ $s := .Resize "1200x webp" }}<img class="cover" src="{{ $s.RelPermalink }}" alt="" width="{{ $s.Width }}" height="{{ $s.Height }}">{{ end }}
+  <div class="kotonoha-text">{{ .Content }}</div>
+  <p class="meta"><time>{{ .Date.Format "2006.1.2" }}</time>　逢坂 透</p>
+  <p class="share"><a href="https://x.com/intent/post?text={{ .Plain | truncate 100 | urlquery }}&url={{ .Permalink | urlquery }}" target="_blank" rel="noopener">Xでわかちあう</a></p>
+  <nav class="prevnext">
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">← ひとつ前</a>{{ else }}<span></span>{{ end }}
+    <a href="{{ "/kotonoha/" | relURL }}">一覧</a>
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">ひとつ後 →</a>{{ else }}<span></span>{{ end }}
+  </nav>
+</article>
+{{ end }}

@@ -1,0 +1,7 @@
+{{ if gt .TotalPages 1 }}
+<nav class="pager">
+  {{ with .Prev }}<a href="{{ .URL }}">← 新しい言の葉</a>{{ end }}
+  <span>{{ .PageNumber }} / {{ .TotalPages }}</span>
+  {{ with .Next }}<a href="{{ .URL }}">過去の言の葉 →</a>{{ end }}
+</nav>
+{{ end }}
