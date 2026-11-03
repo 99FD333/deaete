@@ -1,5 +1,26 @@
-{{ with site.Params.googleForm }}
-<div class="form-wrap"><iframe src="{{ . }}" loading="lazy" title="ことづてフォーム">読み込んでいます…</iframe></div>
-{{ else }}
-<p class="placeholder">（ここにフォームが入ります。準備中です）</p>
+{{ with site.Params.formTo }}
+<form class="kotozute-form" action="https://formsubmit.co/{{ . }}" method="POST">
+  <input type="hidden" name="_subject" value="【出逢えてよかった】ことづてが届きました">
+  <input type="hidden" name="_next" value="{{ "kotozute/arigatou/" | absURL }}">
+  <input type="hidden" name="_template" value="box">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+  <label>お名前<span>ペンネームでも構いません</span>
+    <input type="text" name="お名前" required>
+  </label>
+  <label>メールアドレス<span>お返事をご希望の方のみ</span>
+    <input type="email" name="email">
+  </label>
+  <label>あなたの忘れられないシーン
+    <textarea name="忘れられないシーン" rows="9" required placeholder="いつ、どこで、誰と。そのとき見た光や、聞こえた音のことも。"></textarea>
+  </label>
+  <fieldset>
+    <legend>このことづてを、言の葉にしてサイトで紹介しても</legend>
+    <label class="radio"><input type="radio" name="紹介について" value="よい（お名前は伏せて）" checked> よい（お名前は伏せて）</label>
+    <label class="radio"><input type="radio" name="紹介について" value="よい（お名前も添えて）"> よい（お名前も添えて）</label>
+    <label class="radio"><input type="radio" name="紹介について" value="胸にとどめてほしい"> 逢坂 透の胸にとどめてほしい</label>
+  </fieldset>
+  <button type="submit">ことづてを届ける</button>
+</form>
 {{ end }}

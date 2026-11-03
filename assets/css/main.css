@@ -117,3 +117,17 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .kotonoha-single .stage .kotonoha-text p{margin:0}
 .related{max-width:1080px; margin:0 auto; padding:40px 0 64px; border-top:1px solid var(--line)}
 .related h2{font-weight:500; font-size:1.05rem; letter-spacing:.2em; text-align:center; margin:8px 0 28px}
+
+/* ことづてフォーム */
+.kotozute-form{text-align:left; margin:40px auto 0; padding:36px clamp(20px,5vw,44px); background:#fff; border:1px solid var(--line); border-radius:6px; display:grid; gap:26px}
+.kotozute-form label{display:grid; gap:8px; font-size:.95rem; letter-spacing:.08em}
+.kotozute-form label span{font-size:.78rem; color:var(--ink-soft); letter-spacing:.04em}
+.kotozute-form input[type=text],.kotozute-form input[type=email],.kotozute-form textarea{font:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--line); border-radius:4px; background:var(--paper); color:var(--ink); width:100%}
+.kotozute-form textarea{line-height:1.9; resize:vertical}
+.kotozute-form input:focus,.kotozute-form textarea:focus{outline:2px solid var(--ai-soft); border-color:var(--ai)}
+.kotozute-form fieldset{border:0; padding:0; margin:0; display:grid; gap:6px}
+.kotozute-form legend{font-size:.95rem; letter-spacing:.08em; margin-bottom:8px}
+.kotozute-form .radio{display:flex; gap:10px; align-items:center; font-size:.92rem}
+.kotozute-form button{justify-self:center; font:inherit; letter-spacing:.2em; padding:12px 40px; border:1px solid var(--ai); border-radius:999px; background:var(--ai); color:#fff; cursor:pointer}
+.kotozute-form button:hover{background:#4a6079}
+.kotozute-form .hp{display:none}
