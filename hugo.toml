@@ -22,8 +22,8 @@ buildFuture = true
     name = "恋してる時"
     slug = "koishiteru"
   [[params.kotonohaCategories]]
-    name = "偶然の出逢い"
-    slug = "guuzen"
+    name = "日々の出逢い"
+    slug = "hibi"
   [[params.kotonohaCategories]]
     name = "パパになって"
     slug = "papa"
@@ -38,9 +38,13 @@ buildFuture = true
     pageRef = "/monogatari"
     weight = 20
   [[menus.main]]
+    name = "忘れえぬ人々"
+    pageRef = "/hitobito"
+    weight = 30
+  [[menus.main]]
     name = "ことづて"
     pageRef = "/kotozute"
-    weight = 30
+    weight = 40
 
 [markup.goldmark.renderer]
   hardWraps = true

@@ -96,7 +96,7 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 /* カテゴリごとの淡い色 */
 .c-itoshii-hito{--tint:rgba(214,160,140,.20)}
 .c-koishiteru{--tint:rgba(196,150,190,.20)}
-.c-guuzen{--tint:rgba(110,140,175,.20)}
+.c-hibi{--tint:rgba(110,140,175,.20)}
 .c-papa{--tint:rgba(143,175,130,.24)}
 .card:not(.has-image){background:radial-gradient(ellipse 90% 70% at 85% 100%, var(--tint,transparent), transparent 70%), linear-gradient(160deg,#fff 0%,var(--paper-2) 100%)}
 .card.has-image{grid-row:span 1}
@@ -131,3 +131,10 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .kotozute-form button{justify-self:center; font:inherit; letter-spacing:.2em; padding:12px 40px; border:1px solid var(--ai); border-radius:999px; background:var(--ai); color:#fff; cursor:pointer}
 .kotozute-form button:hover{background:#4a6079}
 .kotozute-form .hp{display:none}
+
+/* 物語の年月の見出し・間・初出 */
+.story-body h3{font-weight:500; font-size:.95rem; letter-spacing:.25em; color:var(--ai); margin:4.2em 0 2em; display:flex; align-items:center; gap:14px}
+.story-body h3::after{content:""; flex:1; height:1px; background:var(--line)}
+.story-body h3:first-child{margin-top:0}
+.story-body .pause{margin:3em 0; line-height:2.6; letter-spacing:.12em}
+.story-body .note{margin-top:4em; padding-top:1.4em; border-top:1px solid var(--line); font-size:.85rem; color:var(--ink-soft)}

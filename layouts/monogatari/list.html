@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="block">
-  <h1 class="page-title">出逢いの物語</h1>
+  <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
   <div class="stories">{{ range .Pages }}{{ partial "story-item.html" . }}{{ end }}</div>
 </section>

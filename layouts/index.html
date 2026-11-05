@@ -20,4 +20,12 @@
   </div>
   <a class="more" href="{{ "/monogatari/" | relURL }}">すべての物語へ</a>
 </section>
+
+<section class="block">
+  <h2>忘れえぬ人々</h2>
+  <div class="stories">
+    {{ range first 3 (where site.RegularPages "Section" "hitobito") }}{{ partial "story-item.html" . }}{{ end }}
+  </div>
+  <a class="more" href="{{ "/hitobito/" | relURL }}">すべての人々へ</a>
+</section>
 {{ end }}
