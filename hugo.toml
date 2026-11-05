@@ -42,6 +42,10 @@ buildFuture = true
     pageRef = "/hitobito"
     weight = 30
   [[menus.main]]
+    name = "プロフィール"
+    pageRef = "/profile"
+    weight = 35
+  [[menus.main]]
     name = "ことづて"
     pageRef = "/kotozute"
     weight = 40
