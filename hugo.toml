@@ -11,6 +11,8 @@ buildFuture = true
   description = "この星に降りて、出逢えてよかった人、光景、愛しい瞬間のことを、言の葉にして、のこしておきたい。"
   # X（旧Twitter）のユーザー名。@は不要。決まったら入れてください
   x = "deaeteyokatta3"
+  # Threadsのユーザー名（@は不要）
+  threads = "toru_aisaka"
   # ことづてフォームの届け先（FormSubmitの別名）
   formTo = "5e13e87d0397bf531310ca6d4c57c554"
 

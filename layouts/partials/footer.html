@@ -1,5 +1,5 @@
 <footer class="site-footer">
   <p class="sign">逢坂 透</p>
-  {{ with site.Params.x }}<p><a href="https://x.com/{{ . }}">X @{{ . }}</a></p>{{ end }}
+  {{ if or site.Params.x site.Params.threads }}<p>{{ with site.Params.x }}<a href="https://x.com/{{ . }}">X @{{ . }}</a>{{ end }}{{ if and site.Params.x site.Params.threads }}　{{ end }}{{ with site.Params.threads }}<a href="https://www.threads.com/@{{ . }}">Threads @{{ . }}</a>{{ end }}</p>{{ end }}
   <p class="copy">© {{ now.Year }} 逢坂 透 ／ deaete.jp</p>
 </footer>
