@@ -154,3 +154,8 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .pf-close{text-align:center; line-height:2.3}
 .pf-link{text-align:center}
 @media (max-width:600px){ .pf-list{grid-template-columns:1fr; gap:2px} .pf-list dd{margin-bottom:14px} }
+
+/* 連作の案内・結び */
+.story-body .series-note{font-size:.9rem; line-height:2; color:var(--ink-soft); padding:18px 22px; background:#fff; border:1px solid var(--line); border-radius:4px; margin-bottom:3em}
+.story-body .coda{margin:4em 0 2em; padding-left:1.4em; border-left:2px solid var(--ai-soft); line-height:2.4}
+.story-body .coda p{margin:0 0 1.6em}
