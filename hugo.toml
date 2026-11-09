@@ -40,10 +40,6 @@ buildFuture = true
     pageRef = "/monogatari"
     weight = 20
   [[menus.main]]
-    name = "忘れえぬ人々"
-    pageRef = "/hitobito"
-    weight = 30
-  [[menus.main]]
     name = "プロフィール"
     pageRef = "/profile"
     weight = 35

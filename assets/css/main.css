@@ -159,3 +159,9 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .story-body .series-note{font-size:.9rem; line-height:2; color:var(--ink-soft); padding:18px 22px; background:#fff; border:1px solid var(--line); border-radius:4px; margin-bottom:3em}
 .story-body .coda{margin:4em 0 2em; padding-left:1.4em; border-left:2px solid var(--ai-soft); line-height:2.4}
 .story-body .coda p{margin:0 0 1.6em}
+
+/* 物語中の引用・追伸 */
+.story-body .quote-box{margin:2.4em 0; padding:22px 26px; background:#fff; border:1px solid var(--line); border-radius:4px; font-size:.92rem; line-height:2; color:var(--ink-soft)}
+.story-body .quote-box p{margin:0}
+.story-body .quote-box strong{color:var(--ink); font-weight:500; letter-spacing:.1em}
+.story-body .ps{letter-spacing:.2em; color:var(--ai)}
