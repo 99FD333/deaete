@@ -165,3 +165,26 @@ main{max-width:1080px; margin:0 auto; padding:0 20px}
 .story-body .quote-box p{margin:0}
 .story-body .quote-box strong{color:var(--ink); font-weight:500; letter-spacing:.1em}
 .story-body .ps{letter-spacing:.2em; color:var(--ai)}
+
+/* トップの左右の絵 */
+.hero-grid{display:grid; grid-template-columns:minmax(140px,220px) 1fr minmax(140px,220px); gap:clamp(16px,4vw,56px); align-items:center; max-width:980px; margin:0 auto}
+.hero-pic{position:relative; display:block; color:var(--ink); animation:heroIn 1.8s ease .2s both}
+.hero-pic:hover{text-decoration:none}
+.hero-pic img{width:100%; height:auto; aspect-ratio:3/4; object-fit:cover;
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 52%, transparent 100%);
+          mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 52%, transparent 100%);
+  opacity:.8; filter:saturate(.85); transition:opacity .6s, filter .6s}
+.hero-pic:hover img,.hero-pic:focus-visible img{opacity:1; filter:none}
+.hero-pic.left{top:-36px}
+.hero-pic.right{top:44px}
+.hero-pic .cap{position:absolute; left:8%; right:8%; bottom:4%; font-size:.76rem; line-height:1.7; letter-spacing:.06em; text-align:center; opacity:0; transition:opacity .6s;
+  text-shadow:0 0 6px var(--paper),0 0 10px var(--paper),0 0 3px var(--paper)}
+.hero-pic:hover .cap,.hero-pic:focus-visible .cap{opacity:1}
+.hero-pic.mobile{display:none}
+@keyframes heroIn{from{opacity:0} to{opacity:1}}
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-pic.left,.hero-pic.right{display:none}
+  .hero-pic.mobile{display:block; width:min(60%,230px); margin:0 auto 28px}
+  .hero-pic.mobile .cap{position:static; display:block; opacity:1; margin-top:2px; color:var(--ink-soft); text-shadow:none}
+}

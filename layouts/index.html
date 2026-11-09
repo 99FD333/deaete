@@ -1,11 +1,44 @@
 {{ define "main" }}
+{{/* トップの左右に出す絵の候補：絵のある言の葉と物語すべて */}}
+{{ $pics := slice }}
+{{ range where site.RegularPages "Section" "in" (slice "kotonoha" "monogatari") }}
+  {{ $p := . }}
+  {{ with .Resources.GetMatch "cover.*" }}
+    {{ $img := .Fill "360x480 Center webp" }}
+    {{ $label := cond (eq $p.Section "monogatari") $p.Title ($p.Plain | truncate 24) }}
+    {{ $pics = $pics | append (dict "src" $img.RelPermalink "url" $p.RelPermalink "label" $label) }}
+  {{ end }}
+{{ end }}
+{{ $pick := shuffle $pics }}
 <section class="hero">
   <h1>出逢えてよかった</h1>
-  <div class="profile">
-    <p>この星に降りて、出逢えてよかった<br>人、光景、愛しい瞬間のことを<br>言の葉にして、のこしておこう</p>
-    <p class="sign">逢坂 透</p>
+  <div class="hero-grid">
+    {{ with index $pick 0 }}<a class="hero-pic left" href="{{ .url }}"><img src="{{ .src }}" alt="" width="360" height="480"><span class="cap">{{ .label }}</span></a>{{ else }}<span></span>{{ end }}
+    <div class="hero-main">
+      <div class="profile">
+        <p>この星に降りて、出逢えてよかった<br>人、光景、愛しい瞬間のことを<br>言の葉にして、のこしておこう</p>
+        <p class="sign">逢坂 透</p>
+      </div>
+      {{ with index $pick 0 }}<a class="hero-pic mobile" href="{{ .url }}"><img src="{{ .src }}" alt="" width="360" height="480"><span class="cap">{{ .label }}</span></a>{{ end }}
+      <a class="soft-link" href="{{ "/kotozute/" | relURL }}">ことづてを届ける</a>
+    </div>
+    {{ if gt (len $pick) 1 }}{{ with index $pick 1 }}<a class="hero-pic right" href="{{ .url }}"><img src="{{ .src }}" alt="" width="360" height="480"><span class="cap">{{ .label }}</span></a>{{ end }}{{ else }}<span></span>{{ end }}
   </div>
-  <a class="soft-link" href="{{ "/kotozute/" | relURL }}">ことづてを届ける</a>
+  <script type="application/json" id="hero-pics">{{ $pics | jsonify | safeJS }}</script>
+  <script>
+  (function(){
+    try{
+      var d=JSON.parse(document.getElementById('hero-pics').textContent);
+      if(d.length<2) return;
+      var a=Math.floor(Math.random()*d.length), b;
+      do{ b=Math.floor(Math.random()*d.length); }while(b===a);
+      [['.hero-pic.left',d[a]],['.hero-pic.right',d[b]],['.hero-pic.mobile',d[a]]].forEach(function(x){
+        var el=document.querySelector(x[0]); if(!el) return;
+        el.href=x[1].url; el.querySelector('img').src=x[1].src; el.querySelector('.cap').textContent=x[1].label;
+      });
+    }catch(e){}
+  })();
+  </script>
 </section>
 
 <section class="block">
